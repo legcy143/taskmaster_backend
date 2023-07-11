@@ -31,7 +31,7 @@ app.use(cors()); // Enable CORS
 
 /*  Routers */
 app.get("/" , (req:Request , res:Response)=>{
-  res.status(200).send("ok lesh go")
+  res.status(200).send("ok lesh go , work")
 })
 app.use(router)
 
@@ -39,3 +39,7 @@ app.use(router)
 server.listen(PORT, () => {
   console.log(`App Listing to ${PORT} at http://localhost:${PORT}`);
 });
+// app.listen(PORT, () => {
+//   console.log(`App Listing to ${PORT} at http://localhost:${PORT}`);
+// });
+

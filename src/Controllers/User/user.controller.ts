@@ -59,6 +59,21 @@ export const VerifyUser = async (req: Request, res: Response) => {
 }
 
 
+// fetch user profiles
+export const FetchUserProfile = async(req:Request , res:Response)=>{
+  const userID:string | number = req.body.userID
+  let user = await User.findById({_id:userID})
+  if(!user){
+    return res
+    .status(404).send({success:false , res:"user not found"})
+  }
+  let userDetail = { email: user?.email, name: user?.name, bio: user?.bio, gender: user?.gender }
+  return res
+  .status(200)
+  .send({success:true , userDetail})
+}
+
+
 
 export const EditUserProfile = async (req: Request, res: Response) => {
   const userID: string | number = req.body.userID;

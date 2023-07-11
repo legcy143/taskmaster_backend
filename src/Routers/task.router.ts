@@ -11,11 +11,11 @@ const task: Router = express.Router();
 // create
 task.post("/add-task" , VerifyTokenMiddleman , AddTask)
 // read
-task.get("/all-task" , VerifyTokenMiddleman , ReadTask)
+task.post("/all-task" , VerifyTokenMiddleman , ReadTask)
 // update
-task.get("/update-task" , VerifyTokenMiddleman , UpdateTask)
+task.patch("/update-task" , VerifyTokenMiddleman , UpdateTask)
 // delete
-task.get("/delete-task" , VerifyTokenMiddleman , DeleteTask)
+task.delete("/delete-task" , VerifyTokenMiddleman , DeleteTask)
 
 
 export default task;

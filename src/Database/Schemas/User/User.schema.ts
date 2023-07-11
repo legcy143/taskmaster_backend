@@ -22,7 +22,7 @@ export const UserSchema: Schema<IUser> = new Schema<IUser>({
     },
     gender: {
         type: String,
-        default: "Prefer's not to Say"
+        default: "prefer's not to say"
     },
     task: [
         {
