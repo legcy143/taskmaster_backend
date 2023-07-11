@@ -28,7 +28,7 @@ export const ReadTask = async (req: Request, res: Response) => {
         const userId = req.body.userID;
         let task:any = await Task.find({ user: userId });
         task = task.map((e: any) => {
-            let { _id, ...newTask } = e.toObject()
+            let { user, ...newTask } = e.toObject()
             return newTask
         })
         return res
@@ -43,13 +43,13 @@ export const ReadTask = async (req: Request, res: Response) => {
     }
 }
 export const UpdateTask = async (req: Request, res: Response) => {
-    const { taskId, title, description } = req.body;
+    const { taskId, title, description , status , level } = req.body;
     const updateAt = DateTimeGenerator();
     try {
         const userId = req.body.userID;
         let task = await Task.findOneAndUpdate(
             { user: userId, _id: taskId },
-            { title, description, updateAt },
+            {level, status , title, description, updateAt },
             { new: true }
         );
         if (task) {
