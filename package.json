@@ -4,7 +4,7 @@
   "description": "task view application api",
   "main": "dist/index.ts",
   "scripts": {
-    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "start": "nodemon --watch 'src/**/*.ts' --exec node src/index.ts",
     "dev": "nodemon ./src/index.ts",
     "prod": "node ./dist/index.js",
     "build": "tsc -p ."
